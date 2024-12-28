@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>鹤北的博客</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #50b3a2; /* 蓝色背景 */
+            color: #ffffff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #e8491d 3px solid;
+        }
+        header a {
+            color: #ffffff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 10px;
+        }
+        header #branding {
+            float: left;
+        }
+        header #branding h1 {
+            margin: 0;
+        }
+        header nav {
+            float: right;
+            margin-top: 10px;
+        }
+        header .highlight, header .current a {
+            color: #e8491d;
+            font-weight: bold;
+        }
+        section#main {
+            padding: 15px;
+            background: #ffffff;
+        }
+        footer {
+            background: #333333;
+            color: #ffffff;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        .post {
+            margin-bottom: 20px;
+            padding: 10px;
+            background: #f4f4f4; /* 浅灰色背景 */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .post h2 {
+            color: #333;
+        }
+        .post p {
+            color: #666;
+        }
+        .anime-quote {
+            background: #000000; /* 黑色背景 */
+            color: #ffffff; /* 白色文字 */
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+        .button {
+            display: inline-block;
+            background-color: #50b3a2;
+            color: #ffffff;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function fetchAnimeQuote() {
+                var apiUrl = 'https://api.lolimi.cn/API/tgrj/api.php?type=json';
+                
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', apiUrl, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var quoteData = JSON.parse(xhr.responseText);
+                        if (quoteData.code === '1') {
+                            document.getElementById('anime-quote').textContent = quoteData.text;
+                        } else {
+                            document.getElementById('anime-quote').textContent = '加载一言失败。';
+                        }
+                    }
+                };
+                xhr.send();
+            }
+            
+            fetchAnimeQuote();
+        });
+
+        function showPcWallpaper() {
+            alert("PC壁纸链接：\nhttps://api.lolimi.cn/API/dmtx/pc.php");
+        }
+
+        function showDraw() {
+            alert("抽取链接：\nhttps://api.lolimi.cn/API/chouq/api.php");
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1>鹤北的博客</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="#">首页</a></li>
+                    <li><a href="#">文章</a></li>
+                    <li><a href="#">关于我</a></li>
+                    <li><a href="#" onclick="showQQ()">联系</a></li> <!-- 联系链接 -->
+                    <li><a href="https://qm.qq.com/q/9vIOw3H64o" target="_blank">QQ</a></li> <!-- QQ链接 -->
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <!-- 内容一：科技少年 -->
+            <div class="post">
+                <h2>科技少年</h2>
+                <p>在这个信息爆炸的时代，科技少年鹤北以其对技术的热爱和追求，成为了同龄人中的佼佼者。他不仅对最新的科技动态了如指掌，还能将这些知识运用到实际项目中，创造出令人惊叹的成果。鹤北相信，科技是推动社会进步的重要力量，而他正是这股力量的一份子。</p>
+            </div>
+            
+            <!-- 内容二：QQ联系方式 -->
+            <div class="contact">
+                <h2>联系方式</h2>
+                <p>想要与鹤北交流科技心得或者探讨最新技术？欢迎通过QQ联系他：236480478。</p>
+            </div>
+            
+            <!-- 内容三：遗失的信件 -->
+            <div class="post">
+                <h2>遗失的信件</h2>
+                <p>在一个风和日丽的午后，阳光透过窗帘的缝隙，洒在了布满尘埃的旧书桌上。桌上静静地躺着一封泛黄的信件，它似乎在诉说着一段被遗忘的故事。</p>
+                <p>信件的主人是一个名叫林的年轻女子，她有着一头乌黑的长发和明亮的眼睛。林曾经深爱着一个叫杰的男子，他们的爱情如同春日里绽放的花朵，美丽而短暂。杰是一个才华横溢的画家，他用画笔捕捉了林的每一个微笑，每一个眼神。他们的爱情故事，曾经是小镇上最美的传说。</p>
+                <p>然而，命运总是喜欢在最美好的时刻，给予人们最沉重的打击。杰在一次意外中失去了生命，留下了林和那些充满爱意的画作。林的世界在一夜之间崩塌，她的心仿佛被掏空，只剩下无尽的悲伤和回忆。</p>
+                <p>信件是杰生前写给林的最后一封信，他在里面描绘了他们未来的蓝图，每一个字都充满了对未来的憧憬和对林的深情。但命运的残酷让这封信成为了林心中永远的痛。</p>
+                <p>岁月流转，林渐渐老去，她的生活变得平淡无奇。她将那些画作和信件锁在了抽屉里，试图将过去的记忆尘封。但每当夜深人静，她总会悄悄地拿出那封信，泪水模糊了视线，心中的痛楚却依旧清晰。</p>
+                <p>直到有一天，林决定将那些画作和信件捐赠给博物馆，她希望杰的艺术能够被更多人欣赏，她希望他们的爱情故事能够以另一种方式延续。信件被小心翼翼地装进一个精致的木盒，随着时间的流逝，它的故事也许会被更多人知晓，但林心中的那份伤感，却永远无法抹去。</p>
+                <p>这篇文章通过描绘一个关于失去爱人和回忆的故事，传达了一种深深的伤感和怀旧之情。希望这篇文章能够触动你的心弦。</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="extra-buttons">
+        <div class="container">
+            <button class="button" onclick="showPcWallpaper()">pc壁纸</button>
+            <button class="button" onclick="showDraw()">抽取</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="anime-quote" id="anime-quote">加载中...</div>
+        <p>《made is 鹤北》</p>
+    </footer>
+</body>
+</html>
