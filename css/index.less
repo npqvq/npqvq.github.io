@@ -1,0 +1,197 @@
+.box{
+    .headerBox .header .navbar .navbar-nav .nav-item:nth-child(1) .nav-link{
+        color: #222;
+    }
+
+    .headTitle{
+        text-align: center;
+        padding: 0.8vw;
+        background-color: #AE383E;
+        color: #fff;
+        font-weight: 700;
+        .text{
+            border-bottom: 2px solid transparent;
+
+            &:hover{
+                border-bottom: 2px solid #fff;
+            }
+
+            &:hover ~ .youjiantou{
+                transform: translateX(7px) scale(1.2);
+            }
+        }
+
+        .youjiantou{
+            display: inline-block;
+            transform: translateX(0);
+            transition: all .3s;
+        }
+    }
+
+    .swiperBox{
+        .swiper{
+            width: 100%;
+            // aspect-ratio: 3/1;E
+            .swiper-wrapper{
+            }
+            // min-height: 200px;
+            .content{
+                width: 100%;
+                min-height: 200px;
+                // aspect-ratio: 3/2;
+                padding-left: 10vw;
+            //    min-height: 200px;
+                // height: 200px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                color: white;
+                .title{
+                    font-size: 2.5vw;
+                    font-weight: 700;
+                }
+                .text{
+                    font-size: 1.5vw; 
+                }
+                .swiper-btn{
+                    width: fit-content;
+                    display: inline-block;
+                    padding: 1vw 1.1vw;
+                    border: 2px solid transparent;
+                    margin: 0.8vw 0;
+                    background-color: #0067B8;
+                    font-size: 1.5vw;
+                    font-weight: 600;
+                }
+
+                &:nth-child(1){
+                    background: url(../image/swiper1.jpg);
+                    background-size: cover;
+
+                }
+
+                &:nth-child(2){
+                    background: url(../image/swiper2.jpg);
+                    background-size: cover;
+                }
+            }
+        }
+    }
+
+    .classBox{
+        width: 75%;
+        margin: 5vw auto 5vw;
+        .nav{
+            justify-content: center;
+            .nav-item{
+                padding: 0 1px;
+                .nav-link{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    img{
+                        width: 40px;
+                        height: 40px;
+                    }
+                    span{
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: #0067B8;
+                        border-bottom: 2px solid transparent;
+                    }
+
+                    &:hover span{
+                        border-bottom: 2px solid #0067B8;
+                    }
+                }
+            }
+        }
+    }
+
+    .commodityBox{
+        width: 90%;
+        margin: 0 auto 0;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .item{
+            width: 24%;
+            img{
+                width: 100%;
+            }
+
+            h4{
+                padding-top: 16px;
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 12px;
+            }
+
+            .go{
+                color: #0067B8;
+                margin: 16px 0;
+                .text{
+                    border-bottom: 1px solid transparent;
+                }
+                .icon{
+                    display: inline-block;
+                    transition: all .3s;
+                }
+
+                &:hover {
+                    .text{
+                        border-bottom: 1px solid #0067B8;
+                    }
+                    .icon{
+                        transform: translateX(5px) scale(1.2);
+                    }
+                }
+            }
+        }
+    }
+
+    .newProduct{
+        width: 90%;
+        aspect-ratio: 4/1.8;
+        margin: 5vw auto;
+        padding-left: 10vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: url(../image/newProduct.jpg);
+        background-size: cover;
+        .content{
+            color: white;
+            width: 39%;
+            .label{
+                font-size: 1.5vw;
+                display: inline-block;
+                padding: 6px 12px;
+                margin-bottom: 8px;
+                color: #000;
+                font-weight: 600;
+                background-color: #FFB900;
+            }
+            .title{
+                font-size: 2.5vw;
+                font-weight: 700;
+            }
+            .text{
+                font-size: 1.5vw; 
+            }
+            .swiper-btn{
+                display: inline-block;
+                padding: 1vw 1.1vw;
+                border: 2px solid transparent;
+                margin: 0.8vw 0;
+                background-color: #0067B8;
+                font-size: 1.5vw;
+                font-weight: 600;
+            }
+        }
+ 
+
+    }
+
+
+}
