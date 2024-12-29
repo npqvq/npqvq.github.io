@@ -3,120 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2025！</title>
+    <title>响应式网站</title>
     <style>
         /* 设置全局样式 */
         body {
-            font-family: Arial, sans-serif; /* 字体 */
-            margin: 0; /* 外边距 */
-            padding: 0; /* 内边距 */
-            background-color: #ffffff; /* 白色背景 */
-            color: #000000; /* 黑色文字 */
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
         }
 
         /* 容器样式 */
         .container {
-            width: 80%; /* 容器宽度 */
-            margin: auto; /* 自动外边距 */
-            overflow: hidden; /* 隐藏溢出内容 */
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            background-color: #ffffff;
         }
 
         /* 头部样式 */
         header {
-            background: #001f3f; /* 深蓝色背景 */
-            padding: 20px; /* 内边距 */
-            border-bottom: #0074d9 3px solid; /* 蓝色底部边框 */
+            background: #001f3f;
+            padding: 20px;
+            border-bottom: #0074d9 3px solid;
         }
 
         header h1 {
-            margin: 0; /* 外边距 */
-            padding: 0; /* 内边距 */
-            color: white; /* 白色文字 */
+            margin: 0;
+            padding: 0;
+            color: white;
         }
 
         /* 导航容器样式 */
         .nav-container {
-            display: flex; /* 弹性布局 */
-            justify-content: space-between; /* 空间分布 */
-            margin-top: 20px; /* 上边距 */
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
         }
 
         /* 导航栏样式 */
         nav {
-            width: 20%; /* 宽度 */
-            background-color: #001f3f; /* 深蓝色背景 */
-            padding: 10px; /* 内边距 */
+            width: 20%;
+            background-color: #001f3f;
+            padding: 10px;
         }
 
         nav ul {
-            list-style-type: none; /* 无项目符号 */
-            padding: 0; /* 内边距 */
+            list-style-type: none;
+            padding: 0;
         }
 
         nav ul li {
-            margin: 10px 0; /* 上下外边距 */
+            margin: 10px 0;
         }
 
         nav ul li a {
-            color: white; /* 白色文字 */
-            text-decoration: none; /* 无下划线 */
-            font-weight: bold; /* 加粗 */
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
         }
 
         /* 内容容器样式 */
         .content-container {
-            display: flex; /* 弹性布局 */
-            justify-content: space-between; /* 空间分布 */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            flex: 1;
         }
 
         /* 主体内容样式 */
         main {
-            width: 60%; /* 宽度 */
-            padding: 20px; /* 内边距 */
-            background-color: #ffffff; /* 白色背景 */
+            width: 60%;
+            padding: 20px;
+            background-color: #ffffff;
         }
 
         .post {
-            margin-bottom: 20px; /* 下边距 */
+            margin-bottom: 20px;
         }
 
         .post h2 {
-            margin-top: 0; /* 上边距 */
+            margin-top: 0;
         }
 
         /* 按钮容器样式 */
         .button-container {
-            width: 20%; /* 宽度 */
-            padding: 20px; /* 内边距 */
-            background-color: #ffffff; /* 白色背景 */
+            width: 20%;
+            padding: 20px;
+            background-color: #ffffff;
         }
 
-        /* 按钮样式 */
         .button-container button {
-            width: 100%; /* 宽度拉伸 */
-            padding: 10px; /* 内边距 */
-            background-color: #001f3f; /* 深蓝色背景 */
-            border: 2px solid #ffffff; /* 白色边框 */
-            color: #ffffff; /* 白色文字 */
-            font-size: 16px; /* 字体大小 */
-            cursor: pointer; /* 鼠标指针变为手形 */
-            text-align: left; /* 文本左对齐 */
-            word-wrap: break-word; /* 长单词换行 */
-            white-space: normal; /* 允许文本换行 */
-            overflow: hidden; /* 隐藏溢出内容 */
+            width: 100%;
+            padding: 10px;
+            background-color: #001f3f;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            text-align: left;
+            word-wrap: break-word;
+            white-space: normal;
+            overflow: hidden;
         }
 
         /* 底部样式 */
         footer {
-            text-align: center; /* 文本居中 */
-            padding: 20px; /* 内边距 */
-            background-color: #001f3f; /* 深蓝色背景 */
-            color: white; /* 白色文字 */
+            text-align: center;
+            padding: 20px;
+            background-color: #001f3f;
+            color: white;
+            flex-shrink: 0;
         }
 
         .friend-link {
-            margin-top: 20px; /* 上边距 */
-            text-align: center; /* 文本居中 */
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .nav-container, .content-container {
+                flex-direction: column;
+            }
+
+            nav, .button-container {
+                width: 100%;
+            }
+
+            main {
+                width: 100%;
+            }
         }
     </style>
 </head>
@@ -144,7 +163,7 @@
             <main>
                 <article class="post">
                     <h2>谁开的？城里人也开不起！</h2>
-                    <p>很高兴你来到这里，本人学生党awa，网站https://npqvq.github.io/fuck为旧版本页面</p>
+                    <p>很高兴你来到这里，本人学生党awa</p>
                 </article>
             </main>
 
@@ -168,7 +187,7 @@
     <script>
         // 添加点击事件监听器到&ldquo;联系我&rdquo;链接
         document.getElementById('contact-me').addEventListener('click', function(event) {
-            event.preventDefault(); // 阻止默认行为
+            event.preventDefault();
             alert("qq:3868305011 或者 discord:npickaxe11");
         });
 
