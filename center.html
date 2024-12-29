@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>网站集合</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #000;
+            color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .box {
+            width: 80px;
+            height: 100px;
+            background-color: #007bff;
+            margin: 20px 0;
+            border: 1px solid #000;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        a {
+            display: inline-block;
+            margin-bottom: 10px;
+            padding: 6px 20px;
+            background-color: #00008B; /* 深蓝色 */
+            color: white;
+            text-decoration: none;
+            border-radius: 10px;
+            transition: background-color 0.3s;
+            max-width: 200px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        a:hover {
+            background-color: #00006A; /* 深蓝色变暗 */
+            color: #fff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .shadow-effect {
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .rounded-corners {
+            border-radius: 10px;
+        }
+
+        .header-text {
+            font-size: 22px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header-text">选择网站</div>
+    <div class="container">
+        <a href="demo.hungaa.ggff.net" class="shadow-effect rounded-corners">Demo（演示）</a>
+        <a href="https://ceya.hunga.ggff.net/" class="shadow-effect rounded-corners">测压网站</a>
+        <a href="https://pass.hungaa.ggff.net/" class="shadow-effect rounded-corners">密码生成网站</a>
+        <a href="https://np.ip-ddns.com" target="_blank" class="shadow-effect rounded-corners">
+            <img src="p.jpg" alt="示例图片">
+        </a>
+    </div>
+</body>
+</html>
