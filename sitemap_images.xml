@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+  <!-- Created By http://www.zhetao.com/sitemapcreator,  URLs: 2 Generated at: 2024-12-30 20:37:41 -->
+
+  <url>
+    <loc>https://np.ip-ddns.com/center</loc>
+    <priority>1.00</priority>
+<image:image>
+<image:loc>https://np.ip-ddns.com/p.jpg</image:loc>
+<image:caption>示例图片</image:caption>
+</image:image>
+  </url>
+
+</urlset>
