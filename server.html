@@ -97,6 +97,38 @@
             margin: 10px 0;
             cursor: pointer;
         }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            function fetchAnimeQuote() {
+                var apiUrl = 'https://api.lolimi.cn/API/tgrj/api.php?type=json';
+                
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', apiUrl, true);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState == 4 && xhr.status == 200) {
+                        var quoteData = JSON.parse(xhr.responseText);
+                        if (quoteData.code === '1') {
+                            document.getElementById('anime-quote').textContent = quoteData.text;
+                        } else {
+                            document.getElementById('anime-quote').textContent = '加载一言失败。';
+                        }
+                    }
+                };
+                xhr.send();
+            }
+            
+            fetchAnimeQuote();
+        });
+
+        function showPcWallpaper() {
+            alert("PC壁纸链接：\nhttps://api.lolimi.cn/API/dmtx/pc.php");
+        }
+
+        function showDraw() {
+            alert("抽取链接：\nhttps://api.lolimi.cn/API/chouq/api.php");
+        }
+    </script>
 </head>
 <body>
     <header>
@@ -148,6 +180,7 @@
     </section>
 
     <footer>
+        <div class="anime-quote" id="anime-quote">加载中...</div>
         <p>《made is your father》 我的邮箱：guojialiang2012@outlook.com</p>
     </footer>
     <style>
