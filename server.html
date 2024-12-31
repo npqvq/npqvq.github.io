@@ -10,6 +10,9 @@
             margin: 0;
             padding: 0;
             background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* 使 body 占据整个视口高度 */
         }
         .container {
             width: 80%;
@@ -54,13 +57,14 @@
         section#main {
             padding: 15px;
             background: #ffffff;
+            flex: 1; /* 使 main 部分占据剩余空间 */
         }
         footer {
             background: #333333;
             color: #ffffff;
             text-align: center;
             padding: 10px;
-            position: relative;
+            position: absolute; /* 固定在页面底部 */
             bottom: 0;
             width: 100%;
         }
@@ -88,6 +92,36 @@
             margin: 10px 0;
             cursor: pointer;
         }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+            }
+            header {
+                padding-top: 15px;
+                min-height: 50px;
+            }
+            header a {
+                font-size: 14px;
+            }
+            header li {
+                padding: 0 5px;
+            }
+            .post {
+                padding: 5px;
+            }
+            .post h2 {
+                font-size: 18px;
+            }
+            .post p {
+                font-size: 14px;
+            }
+            .button {
+                font-size: 14px;
+                padding: 8px 15px;
+            }
+        }
     </style>
 </head>
 <body>
@@ -98,9 +132,8 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="https://np.ip-ddns.com" target="_blank">主页
-                    <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=JTNOc7N1ACVqBhHaLSz2_dBiu5twyMNX&jump_from=webapi&authKey=iCdw8vQHQzfISFgq0Tr9dhZ62ieWCbv2ULuUUFBMQKkKtRsSGEwwqxDeS2Uqld59" target="_blank">QQ群
-                </a></li> <!-- QQ链接 -->
+                    <li><a href="https://np.ip-ddns.com" target="_blank">主页</a></li>
+                    <li><a href="https://qm.qq.com/cgi-bin/qm/qr?k=JTNOc7N1ACVqBhHaLSz2_dBiu5twyMNX&jump_from=webapi&authKey=iCdw8vQHQzfISFgq0Tr9dhZ62ieWCbv2ULuUUFBMQKkKtRsSGEwwqxDeS2Uqld59" target="_blank">QQ群</a></li>
                 </ul>
             </nav>
         </div>
