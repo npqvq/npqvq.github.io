@@ -98,45 +98,6 @@
             cursor: pointer;
         }
     </style>
-        <button onclick="showPcWallpaper()">查看PC壁纸</button>
-    <button onclick="showDraw()">抽取</button>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            function fetchAnimeQuote() {
-                const apiUrl = 'https://api.lolimi.cn/API/yiyan/dz.php?type=json';
-
-                fetch(apiUrl)
-                    .then(response => {
-                        if (!response.ok) {
-                            throw new Error('网络请求失败');
-                        }
-                        return response.json();
-                    })
-                    .then(data => {
-                        if (data.code === '1') {
-                            document.getElementById('anime-quote').textContent = data.text;
-                        } else {
-                            document.getElementById('anime-quote').textContent = '加载一言失败。';
-                        }
-                    })
-                    .catch(error => {
-                        console.error('发生错误:', error);
-                        document.getElementById('anime-quote').textContent = '加载一言失败。';
-                    });
-            }
-
-            fetchAnimeQuote();
-        });
-
-        function showPcWallpaper() {
-            alert("PC壁纸链接：\\nhttps://api.lolimi.cn/API/dmtx/pc.php");
-        }
-
-        function showDraw() {
-            alert("抽取链接：\\nhttps://api.lolimi.cn/API/chouq/api.php");
-        }
-    </script>
 </head>
 <body>
     <header>
