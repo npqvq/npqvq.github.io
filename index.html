@@ -176,7 +176,49 @@
                 <button onclick="window.open('https://np.ip-ddns.com/jy.jpeg', '_blank')">酱油</button>
             </div>
         </div>
+ <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .countdown {
+            text-align: center;
+        }
+        .countdown h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .countdown p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <h1>距离 2025 年还有</h1>
+        <p id="timer"></p>
+    </div>
 
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const nextYear = new Date('January 1, 2025 00:00:00');
+            const timeDifference = nextYear - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
         <!-- 底部 -->
         <footer>
             <div class="friend-link">
