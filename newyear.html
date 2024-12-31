@@ -1,0 +1,56 @@
+当然！以下是一个简单的 HTML 代码示例，用于创建一个 2025 年倒计时的网站。这个示例包括 HTML 和 JavaScript，以便实时更新倒计时。
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 倒计时</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+        .countdown {
+            text-align: center;
+        }
+        .countdown h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        .countdown p {
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <div class="countdown">
+        <h1>距离 2025 年还有</h1>
+        <p id="timer"></p>
+    </div>
+
+    <script>
+        function updateCountdown() {
+            const now = new Date();
+            const nextYear = new Date('January 1, 2025 00:00:00');
+            const timeDifference = nextYear - now;
+
+            const days = Math.floor(timeDifference / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+            document.getElementById('timer').innerHTML = `${days} 天 ${hours} 小时 ${minutes} 分钟 ${seconds} 秒`;
+        }
+
+        setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
+
+
+这个代码会在页面上显示一个倒计时，实时更新距离 2025 年的天数、小时、分钟和秒数。希望这个示例对你有帮助！如果有任何问题或需要进一步的修改，请随时告诉我。
