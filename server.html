@@ -18,6 +18,7 @@
             width: 80%;
             margin: auto;
             overflow: hidden;
+            flex: 1; /* 使 container 占据剩余空间 */
         }
         header {
             background: #0776A0; /* 蓝色背景 */
@@ -64,8 +65,6 @@
             color: #ffffff;
             text-align: center;
             padding: 10px;
-            position: absolute; /* 固定在页面底部 */
-            bottom: 0;
             width: 100%;
         }
         .post {
@@ -167,11 +166,6 @@
         </div>
     </section>
 
-    <section id="extra-buttons">
-        <div class="container">
-        </div>
-    </section>
-
     <footer>
         <p>《made is your father》 我的邮箱：guojialiang2012@outlook.com</p>
     </footer>
@@ -196,8 +190,4 @@
     }
     .styled-button:active {
         transform: translateY(2px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    }
- </style>
-</body>
-</html>
+        box-shadow: 0 2px 4px rgba(0, 0, 0
