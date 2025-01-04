@@ -1,24 +1,32 @@
 <!DOCTYPE html>
 <html lang="zh">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>网站集合</title>
     <style>
-        html, body {
-            height: 100%;
+        * {
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif;
+            box-sizing: border-box;
         }
 
-        body {
+        html, body {
+            height: 100%;
+            background-color: #000;
+            font-family: Arial, sans-serif;
             display: flex;
-            flex-direction: column;
             justify-content: center;
             align-items: center;
-            background-color: #000;
+            flex-direction: column;
             padding: 20px;
+        }
+
+        .header-text {
+            font-size: 22px;
+            color: #fff;
+            margin-bottom: 20px;
         }
 
         .container {
@@ -31,55 +39,58 @@
             overflow: hidden;
         }
 
-        .box {
-            width: 80px;
-            height: 100px;
-            background-color: #007bff;
-            margin: 20px 0;
-            border: 1px solid #000;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        a {
-            display: inline-block;
-            margin-bottom: 10px;
-            padding: 6px 20px;
-            background-color: #00008B; /* 深蓝色 */
-            color: white;
+        .link-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 300px;
+            height: 80px;
+            margin: 20px auto;
+            padding: 15px 20px;
+            background-color: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-decoration: none;
-            border-radius: 10px;
-            transition: background-color 0.3s;
-            max-width: 200px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
         }
 
-        a:hover {
-            background-color: #00006A; /* 深蓝色变暗 */
+        .link-container:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .link-img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .link-container:hover .link-img {
+            border-color: #999;
+        }
+
+        .link-text {
             color: #fff;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+            font-size: 18px;
+            font-weight: 500;
+            text-align: left;
+            flex-grow: 1;
+            margin-left: 20px;
         }
 
-        img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        .arrow-icon {
+            color: #999;
+            font-size: 24px;
+            margin-left: 10px;
+            transition: all 0.3s ease;
         }
 
-        .shadow-effect {
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .rounded-corners {
-            border-radius: 10px;
-        }
-
-        .header-text {
-            font-size: 22px;
-            margin-bottom: 20px;
-            color: #fff;
+        .link-container:hover .arrow-icon {
+            color: #666;
         }
     </style>
 </head>
@@ -87,14 +98,33 @@
 <body>
     <div class="header-text">友情链接</div>
     <div class="container">
-        <a href="https://wanliy.cn" class="shadow-effect rounded-corners">FRIEND：皖霖网络
-         <img src="f.png" width="80" alt="kunkunwangluo">
+        <a href="https://wanliy.cn" class="link-container">
+            <img src="f.png" alt="kunkunwangluo" class="link-img">
+            <span class="link-text">FRIEND：皖霖网络</span>
+            <span class="arrow-icon">&gt;</span>
         </a>
-        <a href="https://lingxmj.top/" class="shadow-effect rounded-corners">XMJ_js</a>
-        <a href="http://3389.iis7.net:54798/" class="shadow-effect rounded-corners">红茶云盘-25T不限速</a>
-        <a href="https://ceya.hunga.ggff.net/" class="shadow-effect rounded-corners">测压网站</a>
-        <a href="https://pass.hungaa.ggff.net/" class="shadow-effect rounded-corners">密码生成网站</a>
+        <a href="https://lingxmj.top/" class="link-container">
+            <span class="link-text">XMJ_js</span>
+            <span class="arrow-icon">&gt;</span>
+        </a>
+        <a href="http://3389.iis7.net:54798/" class="link-container">
+            <span class="link-text">红茶云盘-25T不限速</span>
+            <span class="arrow-icon">&gt;</span>
+        </a>
+        <a href="https://ceya.hunga.ggff.net/" class="link-container">
+            <span class="link-text">测压网站</span>
+            <span class="arrow-icon">&gt;</span>
+        </a>
+        <a href="https://pass.hungaa.ggff.net/" class="link-container">
+            <span class="link-text">密码生成网站</span>
+            <span class="arrow-icon">&gt;</span>
+        </a>
+        <a href="https://xshop.mysxl.cn" target="_blank" class="link-container">
+            <img src="x.jpg" alt="友情链接图片" class="link-img">
+            <span class="link-text">点击前往星空商城</span>
+            <span class="arrow-icon">&gt;</span>
         </a>
     </div>
 </body>
+
 </html>
