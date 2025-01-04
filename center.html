@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>网站集合</title>
+    <title>友情链接</title>
     <style>
         * {
             margin: 0;
@@ -21,12 +21,24 @@
             align-items: center;
             flex-direction: column;
             padding: 20px;
+            animation: fadeIn 2s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .header-text {
             font-size: 22px;
             color: #fff;
             margin-bottom: 20px;
+            animation: slideInFromLeft 1s ease-out;
+        }
+
+        @keyframes slideInFromLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
         }
 
         .container {
@@ -37,6 +49,12 @@
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             overflow: hidden;
+            animation: grow 1s ease-out;
+        }
+
+        @keyframes grow {
+            from { transform: scale(0); }
+            to { transform: scale(1); }
         }
 
         .link-container {
@@ -53,11 +71,25 @@
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             text-decoration: none;
             transition: all 0.3s ease;
+            animation: bounceIn 1s ease-out;
+        }
+
+        @keyframes bounceIn {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
         }
 
         .link-container:hover {
             transform: translateY(-3px);
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
 
         .link-img {
@@ -67,6 +99,12 @@
             border: 2px solid #ccc;
             object-fit: cover;
             transition: all 0.3s ease;
+            animation: rotate 2s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .link-container:hover .link-img {
@@ -80,6 +118,12 @@
             text-align: left;
             flex-grow: 1;
             margin-left: 20px;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        @keyframes fadeInText {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
 
         .arrow-icon {
@@ -87,10 +131,24 @@
             font-size: 24px;
             margin-left: 10px;
             transition: all 0.3s ease;
+            animation: slideInFromRight 1s ease-out;
+        }
+
+        @keyframes slideInFromRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
         }
 
         .link-container:hover .arrow-icon {
             color: #666;
+            animation: shake 1s;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
         }
     </style>
 </head>
