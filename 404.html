@@ -1,12 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
-    <title>404-空空如也</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Not Found</title>
+    <style>
+        body {
+            text-align: center;
+            padding: 150px;
+            font-family: "Arial", sans-serif;
+            background-color: #f8f8f8;
+            color: #333;
+        }
+        h1 {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+        a {
+            color: #007BFF;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+        h1, p, a {
+            animation: fadeIn 2s;
+        }
+    </style>
 </head>
-
 <body>
-    <img src="https://np.ip-ddns.com/az.jpg" alt="404"
-     width="100"
-     height="100"/>
     <h1>404</h1>
-    <p>别看了，毛都没有……</p>
-    <button onclick="location.href='http://np.ip-ddns.com'" type="button"> 回到主页 </button>
+    <p>别看了，这里啥也没有……</p>
+    <p><a href="/">返回主页</a></p>
 </body>
+</html>
