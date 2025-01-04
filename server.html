@@ -9,77 +9,141 @@
             line-height: 1.6;
             margin: 0;
             padding: 0;
-            background-color: #ffffff;
+            background-color: #121212;
+            color: #ffffff;
             display: flex;
             flex-direction: column;
             min-height: 100vh; /* 使 body 占据整个视口高度 */
+            animation: fadeIn 1.5s ease-in-out;
         }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .container {
             width: 80%;
             margin: auto;
             overflow: hidden;
             flex: 1; /* 使 container 占据剩余空间 */
+            animation: fadeInUp 2s ease-in-out;
         }
+
+        @keyframes fadeInUp {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
         header {
-            background: #0776A0; /* 蓝色背景 */
+            background: #1f1f1f; /* 黑色背景 */
             color: #ffffff;
             padding-top: 30px;
             min-height: 70px;
-            border-bottom: #FFFFFF 3px solid;
+            border-bottom: #373737 3px solid;
+            animation: slideInDown 1.5s ease-in-out;
         }
+
+        @keyframes slideInDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
         header a {
             color: #ffffff;
             text-decoration: none;
             text-transform: uppercase;
             font-size: 16px;
+            transition: color 0.3s;
         }
+
+        header a:hover {
+            color: #1db954;
+            animation: bounce 0.3s;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
         header ul {
             padding: 0;
             list-style: none;
         }
+
         header li {
             display: inline;
             padding: 0 10px;
         }
+
         header #branding {
             float: left;
         }
+
         header #branding h1 {
             margin: 0;
+            animation: slideInLeft 1.5s ease-in-out;
         }
+
+        @keyframes slideInLeft {
+            from { transform: translateX(-100%); }
+            to { transform: translateX(0); }
+        }
+
         header nav {
             float: right;
             margin-top: 10px;
+            animation: slideInRight 1.5s ease-in-out;
         }
+
+        @keyframes slideInRight {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
         header .highlight, header .current a {
-            color: #FFFFFF; /* 底栏色 */
+            color: #ffffff; /* 底栏色 */
             font-weight: bold;
         }
+
         section#main {
             padding: 15px;
-            background: #ffffff;
+            background: #1f1f1f;
             flex: 1; /* 使 main 部分占据剩余空间 */
         }
+
         footer {
             background: #333333;
             color: #ffffff;
             text-align: center;
             padding: 10px;
             width: 100%;
+            animation: slideInUp 1.5s ease-in-out;
         }
+
+        @keyframes slideInUp {
+            from { transform: translateY(100%); }
+            to { transform: translateY(0); }
+        }
+
         .post {
             margin-bottom: 20px;
             padding: 10px;
-            background: #ADD8E6; /* blue背景 */
+            background: #373737; /* dark grey背景 */
             border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            animation: fadeIn 2s ease-in-out;
         }
+
         .post h2 {
-            color: #333;
+            color: #ffffff;
         }
+
         .post p {
-            color: #666;
+            color: #cccccc;
         }
+
         .button {
             display: inline-block;
             background-color: #50b3a2;
@@ -90,6 +154,12 @@
             border-radius: 5px;
             margin: 10px 0;
             cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .button:hover {
+            background-color: #3e857a;
+            transform: scale(1.1);
         }
 
         /* 响应式设计 */
@@ -160,34 +230,4 @@
                 <p>然而，命运总是喜欢在最美好的时刻，给予人们最沉重的打击。杰在一次意外中失去了生命，留下了林和那些充满爱意的画作。林的世界在一夜之间崩塌，她的心仿佛被掏空，只剩下无尽的悲伤和回忆。</p>
                 <p>信件是杰生前写给林的最后一封信，他在里面描绘了他们未来的蓝图，每一个字都充满了对未来的憧憬和对林的深情。但命运的残酷让这封信成为了林心中永远的痛。</p>
                 <p>岁月流转，林渐渐老去，她的生活变得平淡无奇。她将那些画作和信件锁在了抽屉里，试图将过去的记忆尘封。但每当夜深人静，她总会悄悄地拿出那封信，泪水模糊了视线，心中的痛楚却依旧清晰。</p>
-                <p>直到有一天，林决定将那些画作和信件捐赠给博物馆，她希望杰的艺术能够被更多人欣赏，她希望他们的爱情故事能够以另一种方式延续。信件被小心翼翼地装进一个精致的木盒，随着时间的流逝，它的故事也许会被更多人知晓，但林心中的那份伤感，却永远无法抹去。</p>
-                <p>这篇文章通过描绘一个关于失去爱人和回忆的故事，传达了一种深深的伤感和怀旧之情。希望这篇文章能够触动你的心弦。</p>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <p>《made is your father》 我的邮箱：guojialiang2012@outlook.com</p>
-    </footer>
-    <style>
-    .styled-button {
-        display: inline-block;
-        padding: 10px 20px;
-        font-size: 16px;
-        font-weight: bold;
-        text-align: center;
-        text-decoration: none;
-        color: #fff;
-        background: linear-gradient(45deg, #ff6f61, #ff935c);
-        border: none;
-        border-radius: 8px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-    .styled-button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
-    }
-    .styled-button:active {
-        transform: translateY(2px);
-        box-shadow: 0 2px 4px rgba(0, 0, 0
+                <p>直到
