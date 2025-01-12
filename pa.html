@@ -63,63 +63,42 @@
     </header>
     <div class="container">
         <h2>怎么从0开始写网站并免费发布</h2>
-        <p class="fade">
- 可以赞助awa
-
-
-准备工作：
-勤劳的双手、脑子、电脑、github账号
-
-可以不要：
-CF或其他cdn（自定义域名）
-
-写html
-首先需要新建一个文本文档，重命名为：index.html，可以先右键编辑并写
-“
-<head>
- <title>你干嘛哈哈哎呦</title>
-</head>
-<bod(y)>
- <h1>我是网站标题</h1>
-</bod(y)>                                                        ”
-把括号去除，我这样只是为了防代码冲突
-这只是演示
-github仓库站点
-访问github并来到个人中心，新建仓库，名字是“你的名字.github.io”，后上传你的index.html，接下来等待几十秒，再次访问网站，就会发现网站可以访问了
-获取域名绑定cf
-      
-（下面是Copilot写的）
-      
-### 使用Cloudflare绑定GitHub Pages
-
-#### 创建Cloudflare账户
-- 访问 [Cloudflare官方网站](https://www.cloudflare.com/)。
-- 创建一个Cloudflare账号，如果已经有账号，请直接登录。
-
-#### 添加站点到Cloudflare
-- 登录后，在Cloudflare的仪表盘中，点击“添加站点”。
-- 输入你的域名（例如：example.com），然后点击“开始扫描DNS记录”。
-
-#### 配置DNS记录
-- 扫描完成后，Cloudflare会列出你的现有DNS记录，你可以保留现有的记录，点击“继续”。
-- 在DNS设置页面，添加以下两条CNAME记录：
-  - 名称（Name）：`www`，目标（Target）：`你的名字.github.io`
-  - 名称（Name）：`@`，目标（Target）：`你的名字.github.io`
-- 保存DNS记录，然后点击“继续”。
-
-#### 更改域名服务器
-- Cloudflare会提供两组新的域名服务器（Nameservers）。
-- 登录你域名注册商（如GoDaddy）的账户，找到DNS设置页面。
-- 将你域名的现有域名服务器更改为Cloudflare提供的域名服务器。
-- 保存更改，等待DNS传播（这可能需要几小时到一天）。
-
-#### 配置GitHub Pages
-- 在GitHub中，进入你的仓库，点击“设置”。
-- 找到“Pages”部分，将“Custom domain”字段设置为你的自定义域名（例如：example.com）。
-- 确保“Enforce HTTPS”选项开启，这样你的网站会强制使用HTTPS。
-
-完成以上步骤后，你的网站应该就可以通过你的自定义域名访问了。如果还有问题，可以查看Cloudflare的[帮助文档](https://support.cloudflare.com/)获取更多信息。
-      </p>
+<p>可以赞助awa</p>
+<p>准备工作：</p>
+<p>勤劳的双手、脑子、电脑、github账号</p>
+<p>可以不要：</p>
+<p>CF或其他cdn（自定义域名）</p>
+<p>写html</p>
+<p>首先需要新建一个文本文档，重命名为：index.html，可以先右键编辑并写</p>
+<p>把括号去除，我这样只是为了防代码冲突</p>
+<p>这只是演示</p>
+<p>github仓库站点</p>
+<p>访问github并来到个人中心，新建仓库，名字是“你的名字.github.io”，后上传你的index.html，接下来等待几十秒，再次访问网站，就会发现网站可以访问了</p>
+<p>获取域名绑定cf</p>
+<p>（下面是Copilot写的）</p>
+<p>### 使用Cloudflare绑定GitHub Pages</p>
+<p>#### 创建Cloudflare账户</p>
+<p>- 访问 [Cloudflare官方网站](https://www.cloudflare.com/)。</p>
+<p>- 创建一个Cloudflare账号，如果已经有账号，请直接登录。</p>
+<p>#### 添加站点到Cloudflare</p>
+<p>- 登录后，在Cloudflare的仪表盘中，点击“添加站点”。</p>
+<p>- 输入你的域名（例如：example.com），然后点击“开始扫描DNS记录”。</p>
+<p>#### 配置DNS记录</p>
+<p>- 扫描完成后，Cloudflare会列出你的现有DNS记录，你可以保留现有的记录，点击“继续”。</p>
+<p>- 在DNS设置页面，添加以下两条CNAME记录：</p>
+<p>  - 名称（Name）：`www`，目标（Target）：`你的名字.github.io`</p>
+<p>  - 名称（Name）：`@`，目标（Target）：`你的名字.github.io`</p>
+<p>- 保存DNS记录，然后点击“继续”。</p>
+<p>#### 更改域名服务器</p>
+<p>- Cloudflare会提供两组新的域名服务器（Nameservers）。</p>
+<p>- 登录你域名注册商（如GoDaddy）的账户，找到DNS设置页面。</p>
+<p>- 将你域名的现有域名服务器更改为Cloudflare提供的域名服务器。</p>
+<p>- 保存更改，等待DNS传播（这可能需要几小时到一天）。</p>
+<p>#### 配置GitHub Pages</p>
+<p>- 在GitHub中，进入你的仓库，点击“设置”。</p>
+<p>- 找到“Pages”部分，将“Custom domain”字段设置为你的自定义域名（例如：example.com）。</p>
+<p>- 确保“Enforce HTTPS”选项开启，这样你的网站会强制使用HTTPS。</p>
+<p>完成以上步骤后，你的网站应该就可以通过你的自定义域名访问了。如果还有问题，可以查看Cloudflare的[帮助文档](https://support.cloudflare.com/)获取更多信息。</p>
         <p><a href="blog.html">返回博客</a></p>
     </div>
 </body>
