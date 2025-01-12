@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>写网站并免费发布-NPickaxe11的博客</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #121212;
+            color: #ffffff;
+        }
+        header {
+            background: #1f1f1f;
+            color: white;
+            padding: 1em;
+            text-align: center;
+            border-radius: 0 0 15px 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: slideDown 1s;
+        }
+        .container {
+            padding: 2em;
+            max-width: 800px;
+            margin: auto;
+            background: #1f1f1f;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: slideIn 1s;
+        }
+        h1, h2 {
+            text-align: center;
+        }
+        .photo {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: fadeIn 2s;
+        }
+        .fade {
+            animation: fadeEffect 1s forwards;
+        }
+        @keyframes fadeEffect {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>NPickaxe11的博客</h1>
+    </header>
+    <div class="container">
+        <h2>怎么从0开始写网站并免费发布</h2>
+        <p class="fade">
+ 可以赞助awa
+
+
+准备工作：
+勤劳的双手、脑子、电脑、github账号
+
+可以不要：
+CF或其他cdn（自定义域名）
+
+写html
+首先需要新建一个文本文档，重命名为：index.html，可以先右键编辑并写
+“
+<head>
+ <title>你干嘛哈哈哎呦</title>
+</head>
+<bod(y)>
+ <h1>我是网站标题</h1>
+</bod(y)>                                                        ”
+把括号去除，我这样只是为了防代码冲突
+这只是演示
+github仓库站点
+访问github并来到个人中心，新建仓库，名字是“你的名字.github.io”，后上传你的index.html，接下来等待几十秒，再次访问网站，就会发现网站可以访问了
+获取域名绑定cf
+      
+（下面是Copilot写的）
+      
+### 使用Cloudflare绑定GitHub Pages
+
+#### 创建Cloudflare账户
+- 访问 [Cloudflare官方网站](https://www.cloudflare.com/)。
+- 创建一个Cloudflare账号，如果已经有账号，请直接登录。
+
+#### 添加站点到Cloudflare
+- 登录后，在Cloudflare的仪表盘中，点击“添加站点”。
+- 输入你的域名（例如：example.com），然后点击“开始扫描DNS记录”。
+
+#### 配置DNS记录
+- 扫描完成后，Cloudflare会列出你的现有DNS记录，你可以保留现有的记录，点击“继续”。
+- 在DNS设置页面，添加以下两条CNAME记录：
+  - 名称（Name）：`www`，目标（Target）：`你的名字.github.io`
+  - 名称（Name）：`@`，目标（Target）：`你的名字.github.io`
+- 保存DNS记录，然后点击“继续”。
+
+#### 更改域名服务器
+- Cloudflare会提供两组新的域名服务器（Nameservers）。
+- 登录你域名注册商（如GoDaddy）的账户，找到DNS设置页面。
+- 将你域名的现有域名服务器更改为Cloudflare提供的域名服务器。
+- 保存更改，等待DNS传播（这可能需要几小时到一天）。
+
+#### 配置GitHub Pages
+- 在GitHub中，进入你的仓库，点击“设置”。
+- 找到“Pages”部分，将“Custom domain”字段设置为你的自定义域名（例如：example.com）。
+- 确保“Enforce HTTPS”选项开启，这样你的网站会强制使用HTTPS。
+
+完成以上步骤后，你的网站应该就可以通过你的自定义域名访问了。如果还有问题，可以查看Cloudflare的[帮助文档](https://support.cloudflare.com/)获取更多信息。
+      </p>
+        <p><a href="blog.html">返回博客</a></p>
+    </div>
+</body>
+</html>
