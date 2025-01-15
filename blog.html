@@ -23,12 +23,21 @@
         }
         .container {
             padding: 2em;
-            max-width: 800px;
+            max-width: 1100px;
             margin: auto;
             background: #1f1f1f;
             border-radius: 15px;
             box-shadow: 0 4px 8px rgba(0,0,0,0.5);
             animation: slideIn 1s;
+            display: flex;
+            justify-content: space-between;
+        }
+        .content {
+            flex: 1;
+            margin-right: 20px;
+        }
+        .sidebar {
+            width: 300px;
         }
         h1, h2 {
             text-align: center;
@@ -57,6 +66,12 @@
             font-size: 0.9em;
             color: #aaaaaa;
         }
+        .image-container img {
+            width: 100%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            border-radius: 5px;
+        }
         @keyframes slideIn {
             from { transform: translateY(20px); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
@@ -72,37 +87,44 @@
         <h1>欢迎来到NPickaxe11的博客</h1>
     </header>
     <div class="container">
-        <h2>文章列表（点击文字跳转）</h2>
-        <ul>
-            <li>
-                <a href="/">个人引导页</a>
-                <p class="description">回到个人引导页</p>
-            </li>
-            <li>
-                <a href="qiao.mp4">Qiao~的黑历史</a>
-                <p class="description">我是故意找茬awa</p>
-            </li>
-            <li>
-                <a href="git.html">一个GitHub加速工具</a>
-                <p class="description">已经用了1年</p>
-            </li>
-            <li>
-                <a href="ym.html">我的引導頁源碼</a>
-                <p class="description">動畫絲滑的引導頁源碼</p>
-            </li>
-            <li>
-                <a href="ch.html">聊天室源码</a>
-                <p class="description">一个开源的聊天室源码 By Bilibili 程序员小山与Bug</p>
-            </li>
-            <li>
-                <a href="ye.html">不知名的API</a>
-                <p class="description">由XMJ_js提供的一个有趣的api</p>
-            </li>
-            <li>
-                <a href="pa.html">怎么从0开始写网站并免费发布</a>
-                <p class="description">awa</p>
-            </li>
-        </ul>
+        <div class="content">
+            <h2>文章列表（点击文字跳转）</h2>
+            <ul>
+                <li>
+                    <a href="/">个人引导页</a>
+                    <p class="description">回到个人引导页</p>
+                </li>
+                <li>
+                    <a href="qiao.mp4">Qiao~的黑历史</a>
+                    <p class="description">我是故意找茬awa</p>
+                </li>
+                <li>
+                    <a href="git.html">一个GitHub加速工具</a>
+                    <p class="description">已经用了1年</p>
+                </li>
+                <li>
+                    <a href="ym.html">我的引導頁源碼</a>
+                    <p class="description">動畫絲滑的引導頁源碼</p>
+                </li>
+                <li>
+                    <a href="ch.html">聊天室源码</a>
+                    <p class="description">一个开源的聊天室源码 By Bilibili 程序员小山与Bug</p>
+                </li>
+                <li>
+                    <a href="ye.html">不知名的API</a>
+                    <p class="description">由XMJ_js提供的一个有趣的api</p>
+                </li>
+                <li>
+                    <a href="pa.html">怎么从0开始写网站并免费发布</a>
+                    <p class="description">awa</p>
+                </li>
+            </ul>
+        </div>
+        <div class="sidebar">
+            <div class="image-container">
+                <img src="https://i.postimg.cc/76PQ3sdQ/EF1-B44-B919-D84-EADEC88-AB976-BFAB82-B.png" alt="图片">
+            </div>
+        </div>
     </div>
 </body>
 </html>
