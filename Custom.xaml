@@ -1,0 +1,28 @@
+﻿<local:MyCard Title="欢迎使用HOLD PANEL！" Margin="0,0,0,15">
+    <StackPanel Margin="25,40,23,15">
+        <!-- 装饰板块 -->
+        <Border Background="#333" CornerRadius="10" Padding="20" Margin="0,0,0,20">
+            <StackPanel>
+                <TextBlock Text="欢迎来到这里！" Foreground="White" FontSize="24" HorizontalAlignment="Center" />
+                <TextBlock Text="若有千千繁星，我仍愿与你共行！" Foreground="White" FontSize="18" HorizontalAlignment="Center" Margin="0,10,0,0"/>
+            </StackPanel>
+        </Border>
+        <!-- 网站部分 -->
+        <StackPanel Margin="0,40,23,15">
+            <!-- 第一行 -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="MineBBS" EventType="打开网页" EventData="https://www.minebbs.com/" ToolTip="MineBBS 论坛" />
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="KLPBBS" EventType="打开网页" EventData="https://klpbbs.com/" ToolTip="KLPBBS 论坛" />
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="MC Wiki" EventType="打开网页" EventData="https://minecraft.fandom.com/zh/" ToolTip="Minecraft 中文 Wiki" />
+            </StackPanel>
+
+            <!-- 第二行 -->
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="CurseForge" EventType="打开网页" EventData="https://www.curseforge.com/minecraft/mc-mods" ToolTip="CurseForge Mod 下载" />
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="Planet Minecraft" EventType="打开网页" EventData="https://www.planetminecraft.com/" ToolTip="Planet Minecraft 资源" />
+                <local:MyButton Margin="0,0,10,0" Width="140" Height="35" HorizontalAlignment="Left" Padding="13,0,13,0" ColorType="Highlight" Text="Minecraft 论坛" EventType="打开网页" EventData="https://www.minecraftforum.net/" ToolTip="Minecraft 论坛" />
+            </StackPanel>
+           <TextBlock Text="作者：NPickaxe11" Foreground="Gray" FontSize="16" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+         </StackPanel>
+       </StackPanel>
+</local:MyCard>
