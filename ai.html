@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="GBK">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>星空XAI</title>
+    <style>
+        /* 全局样式 */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            color: #333;
+        }
+
+        /* 聊天容器 */
+        .chat-container {
+            width: 450px;
+            background-color: #fff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* 聊天框 */
+        .chat-box {
+            flex: 1;
+            padding: 16px;
+            overflow-y: auto;
+            border-bottom: 1px solid #eee;
+            background-color: #fafafa;
+        }
+
+        /* 消息样式 */
+        .chat-message {
+            margin-bottom: 12px;
+            opacity: 0;
+            transform: translateY(10px);
+            animation: fadeInUp 0.3s ease forwards;
+        }
+
+        .chat-message.user {
+            text-align: right;
+        }
+
+        .chat-message.assistant {
+            text-align: left;
+        }
+
+        .chat-message strong {
+            color: #007bff;
+        }
+
+        .chat-message.user strong {
+            color: #28a745;
+        }
+
+        /* 输入框区域 */
+        .chat-input {
+            display: flex;
+            padding: 12px;
+            background-color: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        .chat-input input {
+            flex: 1;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            margin-right: 8px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .chat-input input:focus {
+            border-color: #007bff;
+            outline: none;
+        }
+
+        .chat-input button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .chat-input button:hover {
+            background-color: #0056b3;
+        }
+
+        /* 动画 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* 滚动条样式 */
+        .chat-box::-webkit-scrollbar {
+            width: 6px;
+        }
+
+        .chat-box::-webkit-scrollbar-thumb {
+            background-color: #ccc;
+            border-radius: 3px;
+        }
+
+        .chat-box::-webkit-scrollbar-track {
+            background-color: #f1f1f1;
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-container">
+        <!-- 聊天内容显示区域 -->
+        <div class="chat-box" id="chat-box">
+            <div class="chat-message assistant">
+                <strong>星空AI:</strong> 你好！我是基于阿里云API而制作的星空XAI！
+            </div>
+        </div>
+        <!-- 输入框和发送按钮 -->
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="输入你的消息...">
+            <button onclick="sendMessage()">发送</button>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = "https://apiemp.baystoneai.com/cognihub/service";
+        const API_KEY = "Z0Psl34haygwZG13XPqDN927DwpEen7lBUYm";
+        const isStream = true; // 控制是否使用流式输出
+
+        // 获取DOM元素
+        const chatBox = document.getElementById('chat-box');
+        const userInput = document.getElementById('user-input');
+
+        // 发送消息函数
+        async function sendMessage() {
+            const userMessage = userInput.value.trim();
+            if (!userMessage) return;
+
+            // 添加用户消息到聊天框
+            addMessage('user', userMessage);
+            userInput.value = ''; // 清空输入框
+
+            try {
+                console.log("发起 API 请求...");
+
+                const response = await fetch(`${API_BASE_URL}/v1/chat/completions`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${API_KEY}`,
+                    },
+                    body: JSON.stringify({
+                        model: "qwen2.5-instruct",
+                        messages: [
+                            { role: "system", content: "You are a helpful assistant." },
+                            { role: "user", content: userMessage }
+                        ],
+                        stream: isStream // 控制流式输出
+                    })
+                });
+
+                if (isStream) {
+                    const reader = response.body.getReader();
+                    const decoder = new TextDecoder();
+                    let done = false;
+                    let buffer = ''; // 用于存储数据块的缓冲区
+                    let assistantMessage = ''; // 用于存储AI的完整回复
+
+                    console.log("流式响应已开始");
+
+                    while (!done) {
+                        const { value, done: readerDone } = await reader.read();
+                        done = readerDone;
+                        buffer += decoder.decode(value, { stream: true });
+
+                        // 按行分割数据，处理每一行
+                        const lines = buffer.split('\n');
+                        buffer = lines.pop(); 
+
+                        for (const line of lines) {
+                            const trimmedLine = line.trim();
+
+                            if (trimmedLine === 'data: [DONE]') {
+                                return;
+                            }
+
+                            if (trimmedLine.startsWith('data: ')) {
+                                const jsonString = trimmedLine.replace('data: ', '');
+                                try {
+                                    const data = JSON.parse(jsonString);
+                                    if (data.choices && data.choices.length > 0) {
+                                        const content = data.choices[0].delta?.content || '';
+                                        assistantMessage += content;
+                                        updateAssistantMessage(assistantMessage);
+                                    }
+                                } catch (e) {
+                                    console.error("JSON 解析错误:", e);
+                                }
+                            }
+                        }
+                    }
+
+                    console.log('流式输出完成');
+                } else {
+                    const data = await response.json();
+                    if (data.choices && data.choices.length > 0) {
+                        const assistantMessage = data.choices[0].message.content;
+                        addMessage('assistant', assistantMessage);
+                    }
+                }
+
+            } catch (error) {
+                console.error("Error calling API:", error);
+                addMessage('assistant', '抱歉，出错了，请稍后再试。');
+            }
+        }
+
+        // 添加消息到聊天框
+        function addMessage(role, content) {
+            const messageElement = document.createElement('div');
+            messageElement.classList.add('chat-message', role);
+            messageElement.innerHTML = `<strong>${role === 'user' ? '你' : '星空AI'}:</strong> ${content}`;
+            chatBox.appendChild(messageElement);
+            chatBox.scrollTop = chatBox.scrollHeight; // 滚动到底部
+
+            // 触发动画
+            setTimeout(() => {
+                messageElement.style.opacity = 1;
+                messageElement.style.transform = 'translateY(0)';
+            }, 10);
+        }
+
+        // 更新AI的消息（用于流式输出）
+        function updateAssistantMessage(content) {
+            const lastMessage = chatBox.lastElementChild;
+            if (lastMessage && lastMessage.classList.contains('assistant')) {
+                lastMessage.innerHTML = `<strong>星空AI:</strong> ${content}`;
+            } else {
+                addMessage('assistant', content);
+            }
+            chatBox.scrollTop = chatBox.scrollHeight; // 滚动到底部
+        }
+    </script>
+</body>
+</html>
